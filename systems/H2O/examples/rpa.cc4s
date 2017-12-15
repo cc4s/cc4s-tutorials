@@ -34,9 +34,15 @@ RpaApxEnergy [
   ImaginaryFrequencyPoints ImaginaryFrequencyWeights
 ] [
   Mp2Energy
+  RpaEnergy
 ].
 
 TensorWriter [
   (Data Mp2Energy)
+] [
+].
+
+TensorWriter [
+  (Data RpaEnergy)
 ] [
 ].
