@@ -1,0 +1,42 @@
+ComplexTensorReader [
+  (file "../CoulombVertexComplex.bin")
+  (mode "binary")
+] [
+  (Data CoulombVertex)
+].
+
+TensorReader [
+  (file "../HoleEigenEnergiesComplex.dat")
+] [
+  (Data HoleEigenEnergies)
+].
+
+TensorReader [
+  (file "../ParticleEigenEnergiesComplex.dat")
+] [
+  (Data ParticleEigenEnergies)
+].
+
+TensorReader [
+  (file "../ImaginaryFrequencyPoints.dat")
+] [
+  (Data ImaginaryFrequencyPoints)
+].
+
+TensorReader [
+  (file "../ImaginaryFrequencyWeights.dat")
+] [
+  (Data ImaginaryFrequencyWeights)
+].
+
+RpaApxEnergy [
+  CoulombVertex HoleEigenEnergies ParticleEigenEnergies
+  ImaginaryFrequencyPoints ImaginaryFrequencyWeights
+] [
+  Mp2Energy
+].
+
+TensorWriter [
+  (Data Mp2Energy)
+] [
+].
