@@ -69,7 +69,7 @@ ThermalDirectRingCoupledClusterDoubles [
   Temperature
   ImaginaryTimePoints ImaginaryTimeWeights
   (maxIterations 8)
-  (mixingRatio 1)
+  (mixingRatio 1.25)
   (renormalizations 0)
 ] [
   ThermalDrccdEnergy
