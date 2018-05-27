@@ -74,24 +74,26 @@ ThermalDirectRingCoupledClusterDoubles [
 ] [
   ThermalDrccdEnergy
   SinglesHamiltonianEigenvalues
-  plotAmplitudes plotDeltas plotCoulomb
+  plotAmplitudes plotLambdas plotCoulomb
+  DoublesAmplitudesEigenvalues
 ].
 
 TensorWriter [(Data SinglesHamiltonianEigenvalues)] [].
+TensorWriter [(Data DoublesAmplitudesEigenvalues)] [].
 
-%TensorWriter [(Data ThermalDrccdEnergy)] [].
-%TensorWriter [
-%  (Data plotDeltas)
-%  (rowIndexOrder "i")
-%  (columnIndexOrder "j")
-%] [].
-%TensorWriter [
-%  (Data plotCoulomb)
-%  (rowIndexOrder "i")
-%  (columnIndexOrder "j")
-%] [].
-%TensorWriter [
-%  (Data plotAmplitudes)
-%  (rowIndexOrder "i")
-%  (columnIndexOrder "j")
-%] [].
+TensorWriter [(Data ThermalDrccdEnergy)] [].
+TensorWriter [
+  (Data plotLambdas)
+  (rowIndexOrder "i")
+  (columnIndexOrder "j")
+] [].
+TensorWriter [
+  (Data plotCoulomb)
+  (rowIndexOrder "i")
+  (columnIndexOrder "j")
+] [].
+TensorWriter [
+  (Data plotAmplitudes)
+  (rowIndexOrder "i")
+  (columnIndexOrder "j")
+] [].
