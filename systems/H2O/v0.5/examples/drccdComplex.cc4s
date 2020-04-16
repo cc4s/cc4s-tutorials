@@ -1,0 +1,39 @@
+ComplexTensorReader [
+  (file "../CoulombVertexComplex.bin")
+  (mode "binary")
+] [
+  (Data CoulombVertex)
+].
+TensorReader [
+  (file "../HoleEigenEnergiesComplex.dat")
+] [
+  (Data HoleEigenEnergies)
+].
+TensorReader [
+  (file "../ParticleEigenEnergiesComplex.dat")
+] [
+  (Data ParticleEigenEnergies)
+].
+
+CoulombIntegralsFromVertex [
+  CoulombVertex HoleEigenEnergies ParticleEigenEnergies
+  % for a complex calculation use 1, for a real one 0
+  (complex 1)
+] [
+  PPHHCoulombIntegrals
+  PHHPCoulombIntegrals
+  HHPPCoulombIntegrals
+].
+
+DrccdEnergyFromCoulombIntegrals [
+  HoleEigenEnergies ParticleEigenEnergies
+  PPHHCoulombIntegrals
+  PHHPCoulombIntegrals
+  HHPPCoulombIntegrals
+  (mixer "DiisMixer")
+  (linearized 0)
+] [
+  DrccdEnergy
+].
+
+TensorWriter [(Data DrccdEnergy)] [].
