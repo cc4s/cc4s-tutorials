@@ -30,7 +30,8 @@ DrccdEnergyFromCoulombIntegrals [
   PPHHCoulombIntegrals
   PHHPCoulombIntegrals
   HHPPCoulombIntegrals
- (mixer "DiisMixer")
+  (mixer "DiisMixer")
+  (linearized 0)
 ] [
   DrccdEnergy
 ].
