@@ -29,6 +29,9 @@ CoulombIntegralsFromVertex [
   PHHHCoulombIntegrals
 ].
 
+TensorReader [] [(Data CcsdSinglesAmplitudes)].
+TensorReader [] [(Data CcsdDoublesAmplitudes)].
+
 CcsdEnergyFromCoulombIntegrals [
   CoulombVertex
   PHPHCoulombIntegrals
@@ -40,19 +43,24 @@ CcsdEnergyFromCoulombIntegrals [
   HHHPCoulombIntegrals
   PHHHCoulombIntegrals
   ParticleEigenEnergies HoleEigenEnergies
-  (maxIterations 24)
+  (maxIterations 16)
 % (integralsSliceSize 4)
- (integralsSliceFactor 1)
+% (integralsSliceFactor 1)
+% (mixer "DiisMixer")
  (mixer "DiisMixer")
-% (mixer "LinearMixer")
-% (mixingRatio 0.8)
+% (mixingRatio 1.197631384159885)
   % for a DCSD calculation use the following flag
   % distinguishable is 0 by default
 % (distinguishable 1)
+%  (initialSinglesAmplitudes CcsdSinglesAmplitudes)
+%  (initialDoublesAmplitudes CcsdDoublesAmplitudes)
 ] [
   (CcsdEnergy CcsdEnergy) 
-  (CcsdSinglesAmplitudes CcsdSinglesAmplitudes)
-  (CcsdDoublesAmplitudes CcsdDoublesAmplitudes)
+%  (CcsdSinglesAmplitudes CcsdSinglesAmplitudes)
+%  (CcsdDoublesAmplitudes CcsdDoublesAmplitudes)
 ].
 
 TensorWriter [(Data CcsdEnergy)] [].
+
+%TensorWriter [(Data CcsdSinglesAmplitudes)] [].
+%TensorWriter [(Data CcsdDoublesAmplitudes)] [].

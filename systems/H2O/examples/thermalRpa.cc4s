@@ -68,11 +68,13 @@ ThermalDirectRingCoupledClusterDoubles [
   ThermalHoleOccupancies ThermalParticleOccupancies
   Temperature
   ImaginaryTimePoints ImaginaryTimeWeights
-  (maxIterations 8)
+  (maxIterations 32)
   (mixingRatio 1.25)
   (renormalizations 0)
+  (accuracy 0.00000001)
 ] [
   ThermalDrccdEnergy
+  ThermalTdaEnergy
   SinglesHamiltonianEigenvalues
   plotAmplitudes plotLambdas plotCoulomb
   DoublesAmplitudesEigenvalues
@@ -82,6 +84,7 @@ TensorWriter [(Data SinglesHamiltonianEigenvalues)] [].
 TensorWriter [(Data DoublesAmplitudesEigenvalues)] [].
 
 TensorWriter [(Data ThermalDrccdEnergy)] [].
+TensorWriter [(Data ThermalTdaEnergy)] [].
 TensorWriter [
   (Data plotLambdas)
   (rowIndexOrder "i")

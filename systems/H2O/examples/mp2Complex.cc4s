@@ -11,8 +11,7 @@ TensorReader [
 ].
 TensorReader [
   (file "../ParticleEigenEnergiesComplex.dat")
-] [
-  (Data ParticleEigenEnergies)
+] [(Data ParticleEigenEnergies)
 ].
 
 CoulombIntegralsFromVertex [
@@ -21,21 +20,13 @@ CoulombIntegralsFromVertex [
   (complex 1)
 ] [
   PPHHCoulombIntegrals
-  PHHPCoulombIntegrals
-  HHPPCoulombIntegrals
 ].
 
-DrccdEnergyFromCoulombIntegrals [
+Mp2EnergyFromCoulombIntegrals [
   HoleEigenEnergies ParticleEigenEnergies
   PPHHCoulombIntegrals
-  PHHPCoulombIntegrals
-  HHPPCoulombIntegrals
-  (mixer "DiisMixer")
-  (maxResidua 4)
-%  (linearized 1)
-  (adjacentPairsExchange 1)
 ] [
-  DrccdEnergy
+  (Mp2Energy Mp2Energy) 
 ].
 
-TensorWriter [(Data DrccdEnergy)] [].
+TensorWriter [(Data Mp2Energy)] [].
