@@ -1,0 +1,10 @@
+version: v1.0
+scalarType: complex
+dimensions:
+  - 160
+  - 28
+  - 28
+data: CoulombVertexReal.dat    # path to raw data
+unit: 0.1917011272153577       # = sqrt(Eh/eV)
+spins: 2
+orbitals: real

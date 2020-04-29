@@ -1,0 +1,68 @@
+ComplexTensorReader [
+  (file "../CoulombVertexComplex.bin")
+  (mode "binary")
+] [
+  (Data CoulombVertex)
+].
+TensorReader [
+  (file "../HoleEigenEnergiesComplex.dat")
+] [
+  (Data HoleEigenEnergies)
+].
+TensorReader [
+  (file "../ParticleEigenEnergiesComplex.dat")
+] [(Data ParticleEigenEnergies)
+].
+
+CoulombIntegralsFromVertex [
+  CoulombVertex HoleEigenEnergies ParticleEigenEnergies
+  % for a complex calculation use 1, for a real one 0
+  (complex 1)
+] [
+  PHPHCoulombIntegrals
+  PPHHCoulombIntegrals
+  PHHPCoulombIntegrals
+  HHPPCoulombIntegrals
+  HHHHCoulombIntegrals
+  % the two following integrals are only needed for a complex calculation
+  HHHPCoulombIntegrals
+  PHHHCoulombIntegrals
+].
+
+ComplexTensorReader [] [(Data CcsdSinglesAmplitudes)].
+ComplexTensorReader [] [(Data CcsdDoublesAmplitudes)].
+
+CcsdEnergyFromCoulombIntegrals [
+  CoulombVertex
+  PHPHCoulombIntegrals
+  PPHHCoulombIntegrals
+  PHHPCoulombIntegrals
+  HHPPCoulombIntegrals
+  HHHHCoulombIntegrals
+  % the two following integrals are only needed for a complex calculation
+  HHHPCoulombIntegrals
+  PHHHCoulombIntegrals
+  ParticleEigenEnergies HoleEigenEnergies
+  (energyConvergence 0.001)
+  (amplitudesConvergence 0.001)
+  (maxIterations 64)
+% (integralsSliceSize 4)
+  (integralsSliceFactor 1)
+ (mixer "DiisMixer")
+% (mixer "LinearMixer")
+% (mixingRatio 1.2)
+  % for a DCSD calculation use the following flag
+  % distinguishable is 0 by default
+% (distinguishable 1)
+  (initialSinglesAmplitudes CcsdSinglesAmplitudes)
+  (initialDoublesAmplitudes CcsdDoublesAmplitudes)
+] [
+  (CcsdEnergy CcsdEnergy) 
+  (CcsdSinglesAmplitudes CcsdSinglesAmplitudes)
+  (CcsdDoublesAmplitudes CcsdDoublesAmplitudes)
+].
+
+TensorWriter [(Data CcsdEnergy)] [].
+%ComplexTensorWriter [(Data CcsdSinglesAmplitudes)] [].
+%ComplexTensorWriter [(Data CcsdDoublesAmplitudes)] [].
+

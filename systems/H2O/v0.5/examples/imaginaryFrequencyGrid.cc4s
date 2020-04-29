@@ -1,0 +1,44 @@
+TensorReader [
+  (file "../HoleEigenEnergiesComplex.dat")
+] [
+  (Data HoleEigenEnergies)
+].
+
+TensorReader [
+  (file "../ParticleEigenEnergiesComplex.dat")
+] [
+  (Data ParticleEigenEnergies)
+].
+
+TensorReader [
+  (file "../ImaginaryFrequencyPoints.dat")
+] [
+  (Data ImaginaryFrequencyPoints)
+].
+
+TensorReader [
+  (file "../ImaginaryFrequencyWeights.dat")
+] [
+  (Data ImaginaryFrequencyWeights)
+].
+
+Mp2ImaginaryFrequencyGrid [
+  HoleEigenEnergies ParticleEigenEnergies
+  (imaginaryFrequencies 5)
+  (stepCount 800)
+  (firstPoint 0)
+  ImaginaryFrequencyPoints ImaginaryFrequencyWeights
+] [
+].
+
+TensorWriter [
+  (file "../ImaginaryFrequencyPoints.dat")
+  (Data ImaginaryFrequencyPoints)
+] [
+].
+
+TensorWriter [
+  (file "../ImaginaryFrequencyWeights.dat")
+  (Data ImaginaryFrequencyWeights)
+] [
+].
