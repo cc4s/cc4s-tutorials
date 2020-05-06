@@ -1,0 +1,6 @@
+version: v1.0
+scalarType: real
+dimensions:
+  - 28
+data: Spins.dat   # path to raw data
+unit: 1           # in atomic units: -0.5, 0.0, or +0.5
