@@ -1,5 +1,5 @@
 version: v1.0
-scalarType: complex
+scalarType: complex64
 dimensions:
   - 28
   - 28
