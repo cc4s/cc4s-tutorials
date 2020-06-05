@@ -1,6 +1,10 @@
 version: v1.0
 scalarType: real64
+indices:
+  orbital:
+    type: spatial
 dimensions:
-  - 28
+  - length: 28
+    type: orbital
 data: Spins.dat   # path to raw data
 unit: 1           # in atomic units: -0.5, 0.0, or +0.5
