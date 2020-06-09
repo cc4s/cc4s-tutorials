@@ -2,7 +2,7 @@ version: v1.0
 scalarType: complex64
 indices:
   momentum:
-    type: fullGrid
+    type: halfGrid
   orbital:
     type: spatial
 dimensions:
@@ -12,5 +12,6 @@ dimensions:
     type: orbital
   - length: 28
     type: orbital
-data: CoulombVertexReal.dat    # path to raw data
+data: CoulombVertexReal.bin    # path to raw data
+binary: 1
 unit: 0.1917011272153577       # = sqrt(Eh/eV)
